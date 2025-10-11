@@ -11,7 +11,7 @@ def find_two_sum(array: list[int], target: int) -> tuple[int, int] | None:
         elif two_sum > target:
             j -= 1
         else:
-            return array[i], array[j]
+            return i, j
     return None # If such two numbers doesn't exist
 
 
@@ -27,11 +27,11 @@ def test():
         index_2 = random.randint(0, size - 1)
     target = array[index_1] + array[index_2]
 
-    numbers = find_two_sum(array, target)
+    indexes = find_two_sum(array, target)
 
-    assert numbers # Numbers with target sum should exist
+    assert indexes # Numbers with target sum should exist
 
-    assert target == sum(numbers)
+    assert target == array[indexes[0]] + array[indexes[1]]
 
 
 if __name__ == '__main__':
