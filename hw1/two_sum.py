@@ -16,8 +16,8 @@ def find_two_sum(array: list[int], target: int) -> tuple[int, int] | None:
 
 
 def test():
-    size = 1000
-    max_number = 10000
+    size = 1000 # Size of array
+    max_number = 10000 # Max element of array
     array = random.sample(range(1, max_number), size)
     array.sort()
 
