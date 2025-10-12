@@ -1,5 +1,7 @@
 import random
 
+from utils import count_tests
+
 
 def find_two_sum(array: list[int], target: int) -> tuple[int, int] | None:
     i = 0
@@ -21,10 +23,7 @@ def test():
     array = random.sample(range(1, max_number), size)
     array.sort()
 
-    index_1 = random.randint(0, size - 1)
-    index_2 = random.randint(0, size - 1)
-    while index_2 == index_1:
-        index_2 = random.randint(0, size - 1)
+    index_1, index_2 = random.sample(range(size - 1), 2)
     target = array[index_1] + array[index_2]
 
     indexes = find_two_sum(array, target)
@@ -35,5 +34,4 @@ def test():
 
 
 if __name__ == '__main__':
-    while True:
-        test()
+    count_tests(test)

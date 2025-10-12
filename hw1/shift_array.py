@@ -1,5 +1,6 @@
 import random
-from copy import deepcopy
+
+from utils import count_tests
 
 
 def reverse_array_part(array: list[int], left: int, right: int) -> None:
@@ -24,7 +25,7 @@ def shift_array_simple(array: list[int], n: int) -> list[int]:
 def test():
     size = 1000 # Size of array
     max_number = 10000 # Max element of array
-    array = random.sample(range(1, max_number), size)
+    array = random.choices(range(max_number), k=size)
     n = random.randint(0, size) # Amount to shift
 
     shifted_array_true = shift_array_simple(array, n) # Makes new array
@@ -35,5 +36,4 @@ def test():
 
 
 if __name__ == '__main__':
-    while True:
-        test()
+    count_tests(test)
