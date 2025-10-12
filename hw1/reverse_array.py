@@ -1,7 +1,8 @@
 # Reverse array in-place
 
 import random
-from copy import deepcopy
+
+from utils import count_tests
 
 
 def reverse_array(array: list[int]) -> None:
@@ -14,16 +15,17 @@ def reverse_array(array: list[int]) -> None:
 
 
 def test():
-    size = 1000 # Size of array
+    max_size = 1000 # Size of array
+    size = random.randint(0, max_size)
     max_number = 10000 # Max element of array
-    array = random.sample(range(1, max_number), size)
+    array = random.choices(range(max_number), k=size)
 
-    new_array = deepcopy(array)
-    reverse_array(new_array) # Reverses array in-place
+    reversed_array_true = list(reversed(array)) # Makes new array
 
-    assert list(reversed(array)) == new_array
+    reverse_array(array) # Reverses array in-place
+
+    assert reversed_array_true == array
 
 
 if __name__ == '__main__':
-    while True:
-        test()
+    count_tests(test)
