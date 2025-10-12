@@ -1,3 +1,5 @@
+# Right rotate array by n elements through reversing array
+
 import random
 
 from utils import count_tests

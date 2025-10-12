@@ -1,3 +1,5 @@
+# Sort array which consists of only 0 and 1
+
 import random
 
 from utils import count_tests

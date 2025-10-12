@@ -1,3 +1,5 @@
+# Merge two sorted arrays into a new array
+
 import random
 
 from utils import count_tests
